@@ -1,4 +1,4 @@
-# tasks_app
+# tasks
 
 Freelance project
 --------
