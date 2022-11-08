@@ -2,7 +2,9 @@ package com.desktop.tasks.dao.entity.tasks;
 
 import com.desktop.tasks.service.enums.EPriority;
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
@@ -14,6 +16,7 @@ import java.util.Objects;
 import static javax.persistence.GenerationType.IDENTITY;
 
 @MappedSuperclass
+@EntityListeners(AuditingEntityListener.class)
 public class BaseTask implements Comparable<BaseTask>{
     @Id
     @GeneratedValue(strategy = IDENTITY)
