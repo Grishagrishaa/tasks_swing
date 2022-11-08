@@ -1,4 +1,4 @@
-# tasks_swing
+# tasks_app
 
 Freelance project
 --------
