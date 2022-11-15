@@ -4,12 +4,10 @@ import com.desktop.tasks.ui.mainmenu.controller.MainMenuController;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import javax.swing.*;
 
 @SpringBootApplication
-@EnableJpaAuditing
 public class TasksApplication {
 
     public static void main(String[] args) {

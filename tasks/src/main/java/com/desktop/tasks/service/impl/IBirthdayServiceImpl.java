@@ -1,6 +1,6 @@
 package com.desktop.tasks.service.impl;
 
-import com.desktop.tasks.dao.IBirthdayDao;
+import com.desktop.tasks.dao.api.ITaskDao;
 import com.desktop.tasks.dao.entity.tasks.Birthday;
 import com.desktop.tasks.service.api.ITaskService;
 import org.springframework.stereotype.Service;
@@ -13,9 +13,9 @@ import java.util.stream.Collectors;
 @Service
 @Validated
 public class IBirthdayServiceImpl implements ITaskService<Birthday> {
-    private final IBirthdayDao dao;
+    private final ITaskDao<Birthday> dao;
 
-    public IBirthdayServiceImpl(IBirthdayDao dao) {
+    public IBirthdayServiceImpl(ITaskDao<Birthday> dao) {
         this.dao = dao;
     }
 

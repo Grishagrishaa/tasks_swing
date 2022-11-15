@@ -1,8 +1,6 @@
 package com.desktop.tasks.service.impl;
 
-import com.desktop.tasks.dao.IBirthdayDao;
-import com.desktop.tasks.dao.IBusinessMeetDao;
-import com.desktop.tasks.dao.entity.tasks.Birthday;
+import com.desktop.tasks.dao.api.ITaskDao;
 import com.desktop.tasks.dao.entity.tasks.BusinessMeet;
 import com.desktop.tasks.service.api.ITaskService;
 import org.springframework.stereotype.Service;
@@ -15,9 +13,9 @@ import java.util.stream.Collectors;
 @Service
 @Validated
 public class IBusinessMeetServiceImpl implements ITaskService<BusinessMeet> {
-    private final IBusinessMeetDao dao;
+    private final ITaskDao<BusinessMeet> dao;
 
-    public IBusinessMeetServiceImpl(IBusinessMeetDao dao) {
+    public IBusinessMeetServiceImpl(ITaskDao<BusinessMeet> dao) {
         this.dao = dao;
     }
 

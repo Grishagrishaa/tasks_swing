@@ -1,6 +1,6 @@
 package com.desktop.tasks.service.impl;
 
-import com.desktop.tasks.dao.IFlightDao;
+import com.desktop.tasks.dao.api.ITaskDao;
 import com.desktop.tasks.dao.entity.tasks.Flight;
 import com.desktop.tasks.service.api.ITaskService;
 import org.springframework.stereotype.Service;
@@ -13,9 +13,9 @@ import java.util.stream.Collectors;
 @Service
 @Validated
 public class IFlightServiceImpl implements ITaskService<Flight> {
-    private final IFlightDao dao;
+    private final ITaskDao<Flight> dao;
 
-    public IFlightServiceImpl(IFlightDao dao) {
+    public IFlightServiceImpl(ITaskDao<Flight> dao) {
         this.dao = dao;
     }
 

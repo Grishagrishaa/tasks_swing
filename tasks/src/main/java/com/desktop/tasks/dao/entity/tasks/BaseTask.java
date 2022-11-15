@@ -1,30 +1,14 @@
 package com.desktop.tasks.dao.entity.tasks;
 
 import com.desktop.tasks.service.enums.EPriority;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-
-import javax.persistence.EntityListeners;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
 import javax.validation.constraints.NotNull;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-import static javax.persistence.GenerationType.IDENTITY;
-
-@MappedSuperclass
-@EntityListeners(AuditingEntityListener.class)
 public class BaseTask implements Comparable<BaseTask>{
-    @Id
-    @GeneratedValue(strategy = IDENTITY)
     private Long id;
-    @CreatedDate
-    private LocalDateTime createDate;
-
-    @NotNull
+    private LocalDateTime createDate = LocalDateTime.now();
     private LocalDateTime eventTime;
     @NotNull
     private EPriority priority;

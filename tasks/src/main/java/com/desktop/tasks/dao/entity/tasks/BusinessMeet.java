@@ -3,21 +3,16 @@ package com.desktop.tasks.dao.entity.tasks;
 import com.desktop.tasks.dao.entity.Participant;
 import com.desktop.tasks.service.enums.EPriority;
 
-import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
 
-@Entity
-@Table(name = "BusinessMeet", schema = "tasks")
 public class BusinessMeet extends BaseTask{
     @NotNull
     @NotEmpty
     private String place;
-    @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(schema = "tasks", name = "business_meet_participants", joinColumns = @JoinColumn(name = "business_meet_id"))
     private List<Participant> participants;
 
     public BusinessMeet(LocalDateTime eventTime, EPriority priority,
